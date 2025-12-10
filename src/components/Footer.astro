@@ -1,0 +1,160 @@
+---
+import { Instagram, Twitter, Youtube } from 'lucide-astro';
+---
+
+<footer class="bg-[#FFFEF8] text-[#242424] pt-16 pb-8 border-t border-[#242424]/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+      <div class="md:col-span-1 flex flex-col items-start animate-fade-in">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 rounded-full bg-gradient-to-br from-[#0A4A2E] to-[#10305D] flex items-center justify-center font-bold text-[#FFFEF8] shadow-lg hover:shadow-xl transition-shadow duration-300">
+            5
+          </div>
+          <span class="text-xl font-bold text-[#242424]">The 5 Cup</span>
+        </div>
+        <p class="text-[#242424]/70 text-sm leading-relaxed">
+          La compétition universitaire de football célébrant l'athlétisme et l'esprit élémentaire.
+        </p>
+      </div>
+
+      <div class="animate-fade-in animation-delay-100">
+        <h3 class="font-semibold text-[#242424] mb-4 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-8 after:h-0.5 after:bg-gradient-to-r after:from-[#0A4A2E] after:to-[#10305D]">
+          Liens Rapides
+        </h3>
+        <ul class="space-y-3">
+          {[
+            { label: "À propos", href: "#about" },
+            { label: "Règlement", href: "#rules" },
+            { label: "Équipes", href: "#teams" },
+            { label: "FAQ", href: "#faq" }
+          ].map((link) => (
+            <li class="group">
+              <a
+                href={link.href}
+                class="text-[#242424]/70 hover:text-[#CB9D36] transition-all duration-300 relative inline-block"
+              >
+                <span class="relative">
+                  {link.label}
+                  <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#0A4A2E] to-[#CB9D36] transition-all duration-300 group-hover:w-full"></span>
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="animate-fade-in animation-delay-200">
+        <h3 class="font-semibold text-[#242424] mb-4 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-8 after:h-0.5 after:bg-gradient-to-r after:from-[#0A4A2E] after:to-[#10305D]">
+          Contact
+        </h3>
+        <ul class="space-y-3 text-[#242424]/70">
+          <li class="hover:text-[#CB9D36] transition-colors duration-300">
+            <a href="mailto:thefivecup5@gmail.com">thefivecup5@gmail.com</a>
+          </li>
+          <li>25 avril 2026</li>
+          <li>UrbanSoccer - Toulouse Sept Deniers</li>
+          <li>2 Rue de l'Égalité, 31200 Toulouse</li>
+        </ul>
+      </div>
+
+      <div class="animate-fade-in animation-delay-300">
+        <h3 class="font-semibold text-[#242424] mb-4 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-8 after:h-0.5 after:bg-gradient-to-r after:from-[#0A4A2E] after:to-[#10305D]">
+          Suivez-nous
+        </h3>
+        <div class="flex gap-4">
+          <a
+            href="https://instagram.com/the_five_cup"
+            target="_blank"
+            class="w-10 h-10 rounded-full bg-[#FFFEF8] border-2 border-[#242424]/20 hover:bg-gradient-to-br hover:from-[#0A4A2E] hover:to-[#10305D] hover:border-transparent flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg group"
+            aria-label="Instagram"
+          >
+            <Instagram size={20} class="text-[#242424] group-hover:text-[#FFFEF8] transition-colors duration-300" />
+          </a>
+          <a
+            href="#"
+            class="w-10 h-10 rounded-full bg-[#FFFEF8] border-2 border-[#242424]/20 hover:bg-gradient-to-br hover:from-[#0A4A2E] hover:to-[#10305D] hover:border-transparent flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg group"
+            aria-label="Twitter"
+          >
+            <Twitter size={20} class="text-[#242424] group-hover:text-[#FFFEF8] transition-colors duration-300" />
+          </a>
+          <a
+            href="#"
+            class="w-10 h-10 rounded-full bg-[#FFFEF8] border-2 border-[#242424]/20 hover:bg-gradient-to-br hover:from-[#0A4A2E] hover:to-[#10305D] hover:border-transparent flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg group"
+            aria-label="YouTube"
+          >
+            <Youtube size={20} class="text-[#242424] group-hover:text-[#FFFEF8] transition-colors duration-300" />
+          </a>
+        </div>
+        <div class="mt-6 pt-6 border-t border-[#242424]/10">
+          <p class="text-[#242424]/70 text-sm font-medium mb-3">Partenaires officiels</p>
+          <div class="flex flex-col gap-2">
+            <a
+              href="#"
+              class="px-4 py-2 bg-gradient-to-r from-[#0A4A2E] to-[#10305D] hover:from-[#CB9D36] hover:to-[#0A4A2E] text-[#FFFEF8] rounded-lg font-semibold text-sm transition-all duration-300 hover:scale-105 hover:shadow-lg text-center"
+            >
+              SportsCo
+            </a>
+            <a
+              href="#"
+              class="px-4 py-2 bg-gradient-to-r from-[#10305D] to-[#0A4A2E] hover:from-[#CB9D36] hover:to-[#10305D] text-[#FFFEF8] rounded-lg font-semibold text-sm transition-all duration-300 hover:scale-105 hover:shadow-lg text-center"
+            >
+              UniLeague
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-[#242424]/10 my-8"></div>
+
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 animate-fade-in animation-delay-400">
+      <p class="text-[#242424]/60 text-sm">© 2025-2026 The 5 Cup. Tous droits réservés.</p>
+      <div class="flex gap-6 text-sm text-[#242424]/60">
+        <a href="#" class="hover:text-[#CB9D36] transition-colors duration-300">
+          Politique de confidentialité
+        </a>
+        <a href="#" class="hover:text-[#CB9D36] transition-colors duration-300">
+          Conditions d'utilisation
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out forwards;
+  }
+
+  .animation-delay-100 {
+    animation-delay: 0.1s;
+    opacity: 0;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+    opacity: 0;
+  }
+
+  .animation-delay-300 {
+    animation-delay: 0.3s;
+    opacity: 0;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 0.4s;
+    opacity: 0;
+  }
+</style>
