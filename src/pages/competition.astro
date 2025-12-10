@@ -1,0 +1,268 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { 
+  Trophy, 
+  Users, 
+  Calendar, 
+  Mountain, 
+  Wind, 
+  Droplets,
+  TreeDeciduous,
+  Bird,
+  Cat,
+  Rocket,
+  Cloud,
+  Zap,
+  Tornado,
+  Waves,
+  Droplet,
+  Fish,
+  Heart,
+  Leaf,
+  Disc
+} from 'lucide-astro';
+
+// Color Palette
+// Vert Foncé: #0A4A2E
+// Orange grisée: #CB9D36
+// Bleu nuit: #142540
+// Gris foncé: #242424
+// Bleu foncé: #10305D
+// Ivoire: #FFFEF8
+
+const poules = [
+  {
+    name: 'Terre',
+    id: 'earth',
+    icon: Mountain,
+    borderColor: 'border-[#0A4A2E]/20',
+    headerBg: 'bg-[#0A4A2E]/10',
+    textColor: 'text-[#0A4A2E]',
+    iconBg: 'bg-[#0A4A2E]',
+    teams: [
+      { name: 'Guerriers Verts', players: '6 Joueurs', icon: TreeDeciduous },
+      { name: 'Aigles de la Forêt', players: '6 Joueurs', icon: Bird },
+      { name: 'Lions des Montagnes', players: '6 Joueurs', icon: Cat },
+      { name: 'Titans de la Terre', players: '6 Joueurs', icon: Mountain },
+      { name: 'Force de la Nature', players: '6 Joueurs', icon: Leaf },
+    ]
+  },
+  {
+    name: 'Air',
+    id: 'air',
+    icon: Wind,
+    borderColor: 'border-[#CB9D36]/20',
+    headerBg: 'bg-[#CB9D36]/10',
+    textColor: 'text-[#CB9D36]',
+    iconBg: 'bg-[#CB9D36]',
+    teams: [
+      { name: 'Fusées Célestes', players: '6 Joueurs', icon: Rocket },
+      { name: 'Coureurs du Vent', players: '6 Joueurs', icon: Wind },
+      { name: 'Attaquants des Nuages', players: '6 Joueurs', icon: Cloud },
+      { name: 'Chasseurs de Tempêtes', players: '6 Joueurs', icon: Zap },
+      { name: 'As des Airs', players: '6 Joueurs', icon: Tornado },
+    ]
+  },
+  {
+    name: 'Eau',
+    id: 'water',
+    icon: Droplets,
+    borderColor: 'border-[#10305D]/20',
+    headerBg: 'bg-[#10305D]/10',
+    textColor: 'text-[#10305D]',
+    iconBg: 'bg-[#10305D]',
+    teams: [
+      { name: 'Cavaliers des Vagues', players: '6 Joueurs', icon: Waves },
+      { name: 'Force Aquatique', players: '6 Joueurs', icon: Droplet },
+      { name: 'Marée Montante', players: '6 Joueurs', icon: Disc },
+      { name: 'Attaquants de l\'Océan', players: '6 Joueurs', icon: Fish },
+      { name: 'Grand Bleu', players: '6 Joueurs', icon: Heart },
+    ]
+  }
+];
+
+const matches = [
+  { date: '15 Déc, 10:00', type: 'Terre', team1: 'Guerriers Verts', team2: 'Aigles de la Forêt', rowBg: 'bg-[#0A4A2E]/10', typeColor: 'text-[#0A4A2E]' },
+  { date: '15 Déc, 11:30', type: 'Air', team1: 'Fusées Célestes', team2: 'Coureurs du Vent', rowBg: 'bg-[#CB9D36]/10', typeColor: 'text-[#CB9D36]' },
+  { date: '15 Déc, 13:00', type: 'Eau', team1: 'Cavaliers des Vagues', team2: 'Force Aquatique', rowBg: 'bg-[#10305D]/10', typeColor: 'text-[#10305D]' },
+  { date: '15 Déc, 14:30', type: 'Terre', team1: 'Lions des Montagnes', team2: 'Titans de la Terre', rowBg: 'bg-[#0A4A2E]/10', typeColor: 'text-[#0A4A2E]' },
+  { date: '15 Déc, 16:00', type: 'Air', team1: 'Attaquants des Nuages', team2: 'Chasseurs de Tempêtes', rowBg: 'bg-[#CB9D36]/10', typeColor: 'text-[#CB9D36]' },
+  { date: '16 Déc, 10:00', type: 'Eau', team1: 'Marée Montante', team2: 'Attaquants de l\'Océan', rowBg: 'bg-[#10305D]/10', typeColor: 'text-[#10305D]' },
+];
+
+const rules = [
+  {
+    title: 'Composition des Équipes',
+    items: [
+      'Chaque équipe se compose de 6 joueurs actifs',
+      'Tous les joueurs doivent être des étudiants inscrits à l\'université',
+      'Maximum 2 remplaçants autorisés par équipe',
+      'Les équipes doivent s\'inscrire au moins 2 semaines avant la compétition'
+    ]
+  },
+  {
+    title: 'Format des Matchs',
+    items: [
+      'Format de football 6 contre 6',
+      'Deux mi-temps de 25 minutes chacune',
+      'Pause de 5 minutes à la mi-temps',
+      'Tirs au but pour les égalités en phase à élimination directe'
+    ]
+  },
+  {
+    title: 'Système de Points',
+    items: [
+      'Victoire : 3 points',
+      'Match nul : 1 point',
+      'Défaite : 0 point',
+      'Les 2 meilleures équipes de chaque poule avancent en demi-finales'
+    ]
+  },
+  {
+    title: 'Fair-Play',
+    items: [
+      'Carton jaune : Avertissement',
+      'Carton rouge : Expulsion immédiate',
+      'Le respect des arbitres et des adversaires est obligatoire',
+      'Une conduite antisportive peut entraîner la disqualification de l\'équipe'
+    ]
+  }
+];
+---
+
+<BaseLayout title="Compétition - The 5 Cup" description="Structure de la compétition, équipes et planning des matchs.">
+  <div class="min-h-screen bg-[#FFFEF8]"> <!-- Ivoire Background -->
+    <div class="container mx-auto px-4 py-12 max-w-6xl">
+      
+      <!-- Header Section -->
+      <div class="text-center mb-16">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#CB9D36]/10 text-[#CB9D36] font-medium text-sm mb-4 hover:bg-[#CB9D36]/20 transition-colors duration-300 cursor-default">
+          <Trophy class="w-4 h-4" />
+          Informations du Tournoi
+        </div>
+        <h1 class="text-[#10305D] font-medium text-lg mb-6 hover:text-[#142540] cursor-pointer transition-colors duration-300">Structure de la Compétition</h1>
+        <p class="text-[#242424] max-w-2xl mx-auto text-lg leading-relaxed">
+          La 5 Cup se compose de 3 poules élémentaires, chacune avec 5 équipes s'affrontant pour la gloire. Chaque équipe aligne 6 joueurs sur le terrain.
+        </p>
+      </div>
+
+      <!-- Info Cards -->
+      <div class="grid md:grid-cols-3 gap-6 mb-20">
+        <!-- Card 1 -->
+        <div class="bg-white rounded-xl p-8 shadow-md border border-[#CB9D36]/10 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-in-out cursor-default hover:border-[#CB9D36]/30">
+          <div class="w-12 h-12 bg-[#CB9D36] rounded-lg flex items-center justify-center text-[#FFFEF8] mb-6 transform group-hover:scale-110 transition-transform duration-300">
+            <Trophy class="w-6 h-6" />
+          </div>
+          <h3 class="font-semibold text-lg text-[#142540] mb-3">3 Poules</h3>
+          <p class="text-[#242424] leading-relaxed text-sm">
+            Terre, Air et Eau - chacune représentant des caractéristiques uniques et un esprit de compétition.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white rounded-xl p-8 shadow-md border border-[#10305D]/10 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-in-out cursor-default hover:border-[#10305D]/30">
+          <div class="w-12 h-12 bg-[#10305D] rounded-lg flex items-center justify-center text-[#FFFEF8] mb-6 transform group-hover:scale-110 transition-transform duration-300">
+            <Users class="w-6 h-6" />
+          </div>
+          <h3 class="font-semibold text-lg text-[#142540] mb-3">5 Équipes par Poule</h3>
+          <p class="text-[#242424] leading-relaxed text-sm">
+            15 équipes au total, avec 6 joueurs par équipe, créant une atmosphère intense et compétitive.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white rounded-xl p-8 shadow-md border border-[#0A4A2E]/10 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-in-out cursor-default hover:border-[#0A4A2E]/30">
+          <div class="w-12 h-12 bg-[#0A4A2E] rounded-lg flex items-center justify-center text-[#FFFEF8] mb-6 transform group-hover:scale-110 transition-transform duration-300">
+            <Calendar class="w-6 h-6" />
+          </div>
+          <h3 class="font-semibold text-lg text-[#142540] mb-3">Format Championnat</h3>
+          <p class="text-[#242424] leading-relaxed text-sm">
+            Les équipes affrontent toutes les autres de leur poule. Les meilleures équipes avancent vers les phases finales.
+          </p>
+        </div>
+      </div>
+
+      <!-- Poules & Teams -->
+      <div class="mb-20">
+        <h2 class="text-center text-[#242424] font-medium mb-10">Poules & Équipes</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          {poules.map((poule) => (
+            <div class={`rounded-2xl border ${poule.borderColor} overflow-hidden bg-white shadow-sm transition-all duration-300`}>
+              <!-- Header -->
+              <div class={`${poule.headerBg} p-4 flex items-center gap-4`}>
+                <div class={`${poule.iconBg} p-2 rounded-lg text-[#FFFEF8]`}>
+                  <poule.icon class="w-6 h-6" />
+                </div>
+                <h3 class={`font-medium ${poule.textColor}`}>{poule.name}</h3>
+              </div>
+              
+              <!-- Teams List -->
+              <div class="p-4 space-y-3">
+                {poule.teams.map((team) => (
+                  <div class="flex items-center gap-4 p-3 border border-[#242424]/10 rounded-xl hover:border-[#242424]/30 hover:shadow-md hover:scale-[1.02] hover:bg-[#FFFEF8] transition-all duration-200 bg-white cursor-default">
+                    <div class="w-10 h-10 bg-[#242424]/5 rounded-lg flex items-center justify-center text-[#242424]/60">
+                      <team.icon class="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h4 class="text-[#242424] font-medium text-sm">{team.name}</h4>
+                      <p class="text-[#242424]/60 text-xs">{team.players}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Match Schedule -->
+      <div class="mb-20">
+        <h2 class="text-center text-[#242424] font-medium mb-10">Calendrier des Matchs</h2>
+        <div class="bg-white rounded-2xl border border-[#242424]/10 shadow-sm p-6 space-y-4 hover:shadow-md transition-shadow duration-300">
+          {matches.map((match) => (
+            <div class={`flex flex-col md:flex-row items-center gap-4 p-4 rounded-xl ${match.rowBg} border border-transparent hover:shadow-md hover:scale-[1.01] transition-all duration-200 cursor-default`}>
+              <div class={`flex items-center gap-3 ${match.typeColor} text-sm min-w-[200px] font-medium`}>
+                <Calendar class="w-4 h-4" />
+                <span>{match.date}</span>
+              </div>
+              
+              <div class={`px-6 py-1 rounded-full text-xs font-bold w-24 text-center ${match.typeColor} bg-white/50 backdrop-blur-sm`}>
+                {match.type}
+              </div>
+              
+              <div class="flex-1 flex items-center justify-end gap-3 text-sm font-medium text-[#242424]">
+                <span class="text-right">{match.team1}</span>
+                <span class="text-[#242424]/40 text-xs">vs</span>
+                <span class="text-left">{match.team2}</span>
+              </div>
+            </div>
+          ))}
+          <p class="text-center text-[#242424]/40 text-xs pt-4">
+            * Des matchs supplémentaires seront annoncés au fur et à mesure de la progression du tournoi
+          </p>
+        </div>
+      </div>
+
+      <!-- Competition Rules -->
+      <div>
+        <h2 class="text-center text-[#242424] font-medium mb-10">Règles de la Compétition</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          {rules.map((rule) => (
+            <div class="bg-white rounded-xl p-8 border border-[#242424]/10 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-default">
+              <h3 class="font-semibold text-[#142540] mb-6">{rule.title}</h3>
+              <ul class="space-y-3">
+                {rule.items.map((item) => (
+                  <li class="flex items-start gap-3 text-[#242424]/70 text-sm">
+                    <span class="mt-1.5 w-1 h-1 rounded-full bg-[#CB9D36] flex-shrink-0"></span>
+                    <span class="leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</BaseLayout>
