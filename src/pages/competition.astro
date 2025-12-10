@@ -22,14 +22,6 @@ import {
   Disc
 } from 'lucide-astro';
 
-// Color Palette
-// Vert Foncé: #0A4A2E
-// Orange grisée: #CB9D36
-// Bleu nuit: #142540
-// Gris foncé: #242424
-// Bleu foncé: #10305D
-// Ivoire: #FFFEF8
-
 const poules = [
   {
     name: 'Terre',
@@ -131,10 +123,9 @@ const rules = [
 ---
 
 <BaseLayout title="Compétition - The 5 Cup" description="Structure de la compétition, équipes et planning des matchs.">
-  <div class="min-h-screen bg-[#FFFEF8]"> <!-- Ivoire Background -->
+  <div class="min-h-screen bg-[#FFFEF8]">
     <div class="container mx-auto px-4 py-12 max-w-6xl">
       
-      <!-- Header Section -->
       <div class="text-center mb-16">
         <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#CB9D36]/10 text-[#CB9D36] font-medium text-sm mb-4 hover:bg-[#CB9D36]/20 transition-colors duration-300 cursor-default">
           <Trophy class="w-4 h-4" />
@@ -146,9 +137,7 @@ const rules = [
         </p>
       </div>
 
-      <!-- Info Cards -->
       <div class="grid md:grid-cols-3 gap-6 mb-20">
-        <!-- Card 1 -->
         <div class="bg-white rounded-xl p-8 shadow-md border border-[#CB9D36]/10 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-in-out cursor-default hover:border-[#CB9D36]/30">
           <div class="w-12 h-12 bg-[#CB9D36] rounded-lg flex items-center justify-center text-[#FFFEF8] mb-6 transform group-hover:scale-110 transition-transform duration-300">
             <Trophy class="w-6 h-6" />
@@ -159,7 +148,6 @@ const rules = [
           </p>
         </div>
 
-        <!-- Card 2 -->
         <div class="bg-white rounded-xl p-8 shadow-md border border-[#10305D]/10 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-in-out cursor-default hover:border-[#10305D]/30">
           <div class="w-12 h-12 bg-[#10305D] rounded-lg flex items-center justify-center text-[#FFFEF8] mb-6 transform group-hover:scale-110 transition-transform duration-300">
             <Users class="w-6 h-6" />
@@ -170,7 +158,6 @@ const rules = [
           </p>
         </div>
 
-        <!-- Card 3 -->
         <div class="bg-white rounded-xl p-8 shadow-md border border-[#0A4A2E]/10 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-in-out cursor-default hover:border-[#0A4A2E]/30">
           <div class="w-12 h-12 bg-[#0A4A2E] rounded-lg flex items-center justify-center text-[#FFFEF8] mb-6 transform group-hover:scale-110 transition-transform duration-300">
             <Calendar class="w-6 h-6" />
@@ -182,13 +169,11 @@ const rules = [
         </div>
       </div>
 
-      <!-- Poules & Teams -->
       <div class="mb-20">
         <h2 class="text-center text-[#242424] font-medium mb-10">Poules & Équipes</h2>
         <div class="grid md:grid-cols-3 gap-6">
           {poules.map((poule) => (
             <div class={`rounded-2xl border ${poule.borderColor} overflow-hidden bg-white shadow-sm transition-all duration-300`}>
-              <!-- Header -->
               <div class={`${poule.headerBg} p-4 flex items-center gap-4`}>
                 <div class={`${poule.iconBg} p-2 rounded-lg text-[#FFFEF8]`}>
                   <poule.icon class="w-6 h-6" />
@@ -196,7 +181,6 @@ const rules = [
                 <h3 class={`font-medium ${poule.textColor}`}>{poule.name}</h3>
               </div>
               
-              <!-- Teams List -->
               <div class="p-4 space-y-3">
                 {poule.teams.map((team) => (
                   <div class="flex items-center gap-4 p-3 border border-[#242424]/10 rounded-xl hover:border-[#242424]/30 hover:shadow-md hover:scale-[1.02] hover:bg-[#FFFEF8] transition-all duration-200 bg-white cursor-default">
@@ -215,7 +199,6 @@ const rules = [
         </div>
       </div>
 
-      <!-- Match Schedule -->
       <div class="mb-20">
         <h2 class="text-center text-[#242424] font-medium mb-10">Calendrier des Matchs</h2>
         <div class="bg-white rounded-2xl border border-[#242424]/10 shadow-sm p-6 space-y-4 hover:shadow-md transition-shadow duration-300">
@@ -243,7 +226,6 @@ const rules = [
         </div>
       </div>
 
-      <!-- Competition Rules -->
       <div>
         <h2 class="text-center text-[#242424] font-medium mb-10">Règles de la Compétition</h2>
         <div class="grid md:grid-cols-2 gap-6">
