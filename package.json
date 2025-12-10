@@ -1,0 +1,25 @@
+{
+  "name": "the-5-cup",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ESCAFFRE-Lucas/the-5-cup.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ESCAFFRE-Lucas/the-5-cup/issues"
+  },
+  "homepage": "https://github.com/ESCAFFRE-Lucas/the-5-cup#readme",
+  "description": "",
+  "dependencies": {
+    "astro": "^5.16.4"
+  }
+}
