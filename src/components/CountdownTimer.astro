@@ -1,0 +1,95 @@
+---
+---
+
+<div class="w-full">
+  <div class="flex justify-center gap-4 mb-8 animate-fade-in">
+    <span class="inline-flex items-center gap-2 bg-[#CB9D36]/10 px-4 py-2 rounded-full text-[#CB9D36] font-semibold text-sm">
+      <span>🏆</span>
+      La Compétition Commence Dans
+    </span>
+  </div>
+
+  <h2 class="text-center text-2xl md:text-3xl font-bold text-[#242424] mb-12 animate-fade-in animation-delay-100">
+    Compte à Rebours
+  </h2>
+
+  <div id="countdown" class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+    <div class="time-unit animate-fade-in" style="animation-delay: 200ms;">
+      <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
+        <div class="text-4xl md:text-5xl font-bold text-[#CB9D36] font-mono mb-2" id="days">
+          00
+        </div>
+        <div class="text-sm md:text-base text-[#242424]/70 font-medium">Jours</div>
+      </div>
+    </div>
+    <div class="time-unit animate-fade-in" style="animation-delay: 300ms;">
+      <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
+        <div class="text-4xl md:text-5xl font-bold text-[#CB9D36] font-mono mb-2" id="hours">
+          00
+        </div>
+        <div class="text-sm md:text-base text-[#242424]/70 font-medium">Heures</div>
+      </div>
+    </div>
+    <div class="time-unit animate-fade-in" style="animation-delay: 400ms;">
+      <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
+        <div class="text-4xl md:text-5xl font-bold text-[#CB9D36] font-mono mb-2" id="minutes">
+          00
+        </div>
+        <div class="text-sm md:text-base text-[#242424]/70 font-medium">Minutes</div>
+      </div>
+    </div>
+    <div class="time-unit animate-fade-in" style="animation-delay: 500ms;">
+      <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
+        <div class="text-4xl md:text-5xl font-bold text-[#CB9D36] font-mono mb-2" id="seconds">
+          00
+        </div>
+        <div class="text-sm md:text-base text-[#242424]/70 font-medium">Secondes</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animation-delay-100 {
+    animation-delay: 0.1s;
+  }
+</style>
+
+<script>
+  function calculateTimeLeft() {
+    const targetDate = new Date("2026-04-25T00:00:00").getTime();
+    const now = new Date().getTime();
+    const difference = targetDate - now;
+
+    if (difference > 0) {
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((difference / 1000 / 60) % 60);
+      const seconds = Math.floor((difference / 1000) % 60);
+
+      document.getElementById('days')!.textContent = String(days).padStart(2, '0');
+      document.getElementById('hours')!.textContent = String(hours).padStart(2, '0');
+      document.getElementById('minutes')!.textContent = String(minutes).padStart(2, '0');
+      document.getElementById('seconds')!.textContent = String(seconds).padStart(2, '0');
+    }
+  }
+
+  calculateTimeLeft();
+  setInterval(calculateTimeLeft, 1000);
+</script>

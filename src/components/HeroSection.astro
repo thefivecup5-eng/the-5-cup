@@ -1,0 +1,121 @@
+---
+---
+
+<div class="relative w-full min-h-screen bg-gradient-to-br from-[#FFFEF8] via-[#FFFEF8] to-[#FFFEF8] overflow-hidden">
+  <div class="absolute inset-0">
+    <img
+      src="/assets/photo-1641821330397-6b66a7e092be.jpg"
+      alt=""
+      class="w-full h-full object-cover animate-pulse animation-delay-200"
+    />
+  </div>
+
+  <div class="relative z-10 flex items-center justify-center min-h-screen px-4">
+    <div class="text-center max-w-3xl animate-fade-in">
+
+      <div class="mb-4 inline-block animate-fade-in animation-delay-100">
+        <span class="bg-[#FFFEF8] border border-[#242424]/10 px-4 py-2 rounded-full text-[#242424] text-sm font-medium">
+          Compétition Universitaire de Football
+        </span>
+      </div>
+
+      <h1 class="text-5xl md:text-7xl font-bold text-[#242424] mb-6 animate-fade-in animation-delay-200">
+        <span class="bg-gradient-to-r from-[#10305D] to-[#0A4A2E] bg-clip-text text-transparent">The 5 Cup</span>
+      </h1>
+
+      <p class="text-lg md:text-2xl text-[#242424]/80 mb-8 leading-relaxed animate-fade-in animation-delay-300 max-w-2xl mx-auto">
+        Là où les éléments s'affrontent et les champions émergent. Trois poules, quinze équipes, une victoire ultime.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8 animate-fade-in animation-delay-400">
+        <div class="flex items-center justify-center gap-2 text-[#242424]/70">
+          <span>📅</span>
+          <span>25 avril 2026</span>
+        </div>
+        <div class="flex items-center justify-center gap-2 text-[#242424]/70">
+          <span>📍</span>
+          <span>Toulouse Sept Deniers</span>
+        </div>
+        <div class="flex items-center justify-center gap-2 text-[#242424]/70">
+          <span>👥</span>
+          <span>15 Équipes</span>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in animation-delay-500">
+        <a
+          href="https://helloasso.com"
+          target="_blank"
+          class="px-8 py-3 bg-gradient-to-r from-[#CB9D36] to-[#0A4A2E] text-[#FFFEF8] rounded-full font-semibold hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-xl"
+        >
+          Enregistrer votre équipe (12€)
+        </a>
+        <a
+          href="/competition"
+          class="bg-[#FFFEF8] px-8 py-3 border-2 border-[#242424]/20 text-[#242424] rounded-full font-semibold hover:bg-[#242424]/5 transition-all duration-300"
+        >
+          Voir la compétition
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 0.2;
+    }
+    50% {
+      opacity: 0.3;
+    }
+  }
+
+  .animate-pulse {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out forwards;
+  }
+
+  .animation-delay-100 {
+    animation-delay: 0.1s;
+    opacity: 0;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+    opacity: 0;
+  }
+
+  .animation-delay-300 {
+    animation-delay: 0.3s;
+    opacity: 0;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 0.4s;
+    opacity: 0;
+  }
+
+  .animation-delay-500 {
+    animation-delay: 0.5s;
+    opacity: 0;
+  }
+</style>

@@ -1,10 +1,19 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import CountdownTimer from '../components/CountdownTimer.astro';
+import HeroSection from '../components/HeroSection.astro';
+import PoulesSection from '../components/PoulesSection.astro';
 ---
 
-<BaseLayout title="The 5 Cup - Home" description="Compétition de football - 25 avril 2026 à Toulouse">
-  <div class="p-8 text-center">
-    <h1 class="text-4xl font-bold">The 5 Cup</h1>
-    <p class="mt-4 text-lg">Bienvenue sur le site de la compétition !</p>
-  </div>
+<BaseLayout title="The 5 Cup - Accueil" description="Compétition universitaire de football - 25 avril 2026 à Toulouse">
+
+  <HeroSection />
+
+  <section class="w-full py-20 px-4 bg-gradient-to-b from-[#FFFEF8] to-white">
+    <div class="max-w-4xl mx-auto">
+      <CountdownTimer />
+    </div>
+  </section>
+
+  <PoulesSection />
 </BaseLayout>
