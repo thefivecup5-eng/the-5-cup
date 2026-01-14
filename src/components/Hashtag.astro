@@ -1,0 +1,17 @@
+---
+interface Props {
+  tag: string;
+  posts: string;
+}
+
+const { tag, posts } = Astro.props;
+---
+
+<div
+  class="flex items-center gap-2 px-4 py-2 bg-[#CB9D36]/10 border border-[#CB9D36]/20 rounded-full hover:bg-[#CB9D36]/20 transition-colors cursor-pointer group"
+>
+  <span class="text-[#CB9D36] font-medium">#{tag}</span>
+  <span class="text-[#242424]/60 text-xs group-hover:text-[#242424]/80"
+    >• {posts} publications</span
+  >
+</div>
