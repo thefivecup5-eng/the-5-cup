@@ -1,0 +1,214 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import {
+  Users,
+  Mountain,
+  Wind,
+  Droplets,
+  TreeDeciduous,
+  Bird,
+  Cat,
+  Rocket,
+  Cloud,
+  Zap,
+  Tornado,
+  Waves,
+  Droplet,
+  Fish,
+  Heart,
+  Leaf,
+  Disc
+} from 'lucide-astro';
+
+const poules = [
+  {
+    name: 'Poule Terre',
+    element: 'Terre',
+    color: '#0A4A2E',
+    bgGradient: 'from-[#0A4A2E]/10 to-[#0A4A2E]/5',
+    borderColor: 'border-[#0A4A2E]/30',
+    icon: Mountain,
+    traits: 'Force " Résilience " Détermination',
+    teams: [
+      { name: 'Guerriers Verts', icon: TreeDeciduous },
+      { name: 'Aigles de la Forêt', icon: Bird },
+      { name: 'Lions des Montagnes', icon: Cat },
+      { name: 'Titans de la Terre', icon: Mountain },
+      { name: 'Force de la Nature', icon: Leaf },
+    ]
+  },
+  {
+    name: 'Poule Air',
+    element: 'Air',
+    color: '#CB9D36',
+    bgGradient: 'from-[#CB9D36]/10 to-[#CB9D36]/5',
+    borderColor: 'border-[#CB9D36]/30',
+    icon: Wind,
+    traits: 'Vitesse " Agilité " Stratégie',
+    teams: [
+      { name: 'Fusées Célestes', icon: Rocket },
+      { name: 'Coureurs du Vent', icon: Wind },
+      { name: 'Attaquants des Nuages', icon: Cloud },
+      { name: 'Chasseurs de Tempêtes', icon: Zap },
+      { name: 'As des Airs', icon: Tornado },
+    ]
+  },
+  {
+    name: 'Poule Eau',
+    element: 'Eau',
+    color: '#10305D',
+    bgGradient: 'from-[#10305D]/10 to-[#10305D]/5',
+    borderColor: 'border-[#10305D]/30',
+    icon: Droplets,
+    traits: 'Fluidité " Coordination " Adaptabilité',
+    teams: [
+      { name: 'Cavaliers des Vagues', icon: Waves },
+      { name: 'Force Aquatique', icon: Droplet },
+      { name: 'Marée Montante', icon: Disc },
+      { name: 'Attaquants de l\'Océan', icon: Fish },
+      { name: 'Grand Bleu', icon: Heart },
+    ]
+  }
+];
+---
+
+<BaseLayout title="Équipes - The 5 Cup" description="Découvrez les 15 équipes participantes réparties en 3 poules élémentaires">
+  <div class="min-h-screen bg-gradient-to-b from-[#FFFEF8] to-[#f5f5f0]">
+
+    <div class="bg-gradient-to-r from-[#0A4A2E] via-[#10305D] to-[#CB9D36] text-white py-16">
+      <div class="max-w-6xl mx-auto px-4 text-center">
+        <div class="inline-flex items-center gap-3 mb-6">
+          <Users class="w-12 h-12" />
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Les équipes</h1>
+        <p class="text-xl opacity-90 max-w-2xl mx-auto">
+          15 équipes " 90 joueurs " 3 poules élémentaires
+        </p>
+      </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-4 -mt-8 relative z-10">
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-2xl shadow-lg p-6 text-center">
+          <div class="text-4xl font-bold bg-gradient-to-r from-[#0A4A2E] to-[#10305D] bg-clip-text text-transparent mb-2">
+            15
+          </div>
+          <p class="text-gray-600">Équipes au total</p>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-6 text-center">
+          <div class="text-4xl font-bold bg-gradient-to-r from-[#CB9D36] to-[#10305D] bg-clip-text text-transparent mb-2">
+            3
+          </div>
+          <p class="text-gray-600">Poules élémentaires</p>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-6 text-center">
+          <div class="text-4xl font-bold bg-gradient-to-r from-[#10305D] to-[#0A4A2E] bg-clip-text text-transparent mb-2">
+            90
+          </div>
+          <p class="text-gray-600">Joueurs participants</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-4 py-16">
+      <div class="space-y-12">
+        {poules.map((poule, index) => (
+          <div
+            class="bg-white rounded-3xl shadow-xl overflow-hidden"
+            style={`animation: fade-in-up 0.6s ease-out ${index * 0.2}s both`}
+          >
+            <div
+              class={`p-8 bg-gradient-to-r ${poule.bgGradient} border-b-4 ${poule.borderColor}`}
+            >
+              <div class="flex items-center gap-6">
+                <div
+                  class="w-20 h-20 rounded-2xl flex items-center justify-center text-white shadow-lg"
+                  style={`background-color: ${poule.color}`}
+                >
+                  <poule.icon class="w-10 h-10" />
+                </div>
+                <div class="flex-1">
+                  <h2
+                    class="text-3xl md:text-4xl font-bold mb-2"
+                    style={`color: ${poule.color}`}
+                  >
+                    {poule.name}
+                  </h2>
+                  <p class="text-gray-600 text-lg">{poule.traits}</p>
+                </div>
+                <div class="hidden md:block text-right">
+                  <div class="text-3xl font-bold" style={`color: ${poule.color}`}>5</div>
+                  <p class="text-gray-600">équipes</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-8">
+              <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {poule.teams.map((team) => (
+                  <div
+                    class={`group relative bg-gradient-to-br ${poule.bgGradient} rounded-2xl p-6 border-2 ${poule.borderColor} hover:shadow-xl transition-all duration-300 hover:-translate-y-1`}
+                  >
+                    <div class="flex items-center gap-4">
+                      <div
+                        class="w-14 h-14 rounded-xl flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300"
+                        style={`background-color: ${poule.color}`}
+                      >
+                        <team.icon class="w-7 h-7" />
+                      </div>
+                      <div class="flex-1">
+                        <h3
+                          class="text-lg font-bold mb-1"
+                          style={`color: ${poule.color}`}
+                        >
+                          {team.name}
+                        </h3>
+                        <p class="text-sm text-gray-600">6 joueurs</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-16 bg-gradient-to-r from-[#0A4A2E] via-[#10305D] to-[#CB9D36] rounded-3xl p-8 md:p-12 text-center text-white">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Rejoignez l'aventure !</h2>
+        <p class="text-lg opacity-90 mb-8 max-w-2xl mx-auto">
+          Les inscriptions sont ouvertes. Formez votre équipe et affrontez les meilleures équipes universitaires !
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="https://www.helloasso.com"
+            target="_blank"
+            class="inline-block px-8 py-4 bg-white text-[#0A4A2E] rounded-full font-semibold hover:scale-105 transition-transform duration-300 shadow-lg"
+          >
+            S'inscrire maintenant - 12€/pers
+          </a>
+          <a
+            href="/competition"
+            class="inline-block px-8 py-4 bg-white/10 backdrop-blur-sm border-2 border-white text-white rounded-full font-semibold hover:bg-white/20 transition-all duration-300"
+          >
+            Voir la compétition
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</BaseLayout>
+
+<style>
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
