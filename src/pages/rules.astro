@@ -1,0 +1,188 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { FileText, Users, Clock, Trophy, Shield, AlertCircle, CheckCircle, XCircle } from 'lucide-astro';
+
+const rulesCategories = [
+  {
+    icon: Users,
+    title: 'Composition des Équipes',
+    color: '#0A4A2E',
+    items: [
+      'Chaque équipe se compose de 6 joueurs actifs',
+      'Tous les joueurs doivent être des étudiants inscrits à l\'université',
+      'Maximum 2 remplaçants autorisés par équipe',
+      'Les équipes doivent s\'inscrire au moins 2 semaines avant la compétition'
+    ]
+  },
+  {
+    icon: Clock,
+    title: 'Format des Matchs',
+    color: '#CB9D36',
+    items: [
+      'Format de football 6 contre 6',
+      'Deux mi-temps de 25 minutes chacune',
+      'Pause de 5 minutes à la mi-temps',
+      'Tirs au but pour les égalités en phase à élimination directe'
+    ]
+  },
+  {
+    icon: Trophy,
+    title: 'Système de Points',
+    color: '#10305D',
+    items: [
+      'Victoire : 3 points',
+      'Match nul : 1 point',
+      'Défaite : 0 point',
+      'Les 2 meilleures équipes de chaque poule avancent en demi-finales'
+    ]
+  },
+  {
+    icon: Shield,
+    title: 'Fair-Play',
+    color: '#0A4A2E',
+    items: [
+      'Carton jaune : Avertissement',
+      'Carton rouge : Expulsion immédiate',
+      'Le respect des arbitres et des adversaires est obligatoire',
+      'Une conduite antisportive peut entraîner la disqualification de l\'équipe'
+    ]
+  }
+];
+---
+
+<BaseLayout title="Règlement - The 5 Cup" description="Règlement officiel de la compétition The 5 Cup">
+  <div class="min-h-screen bg-gradient-to-b from-[#FFFEF8] to-[#f5f5f0]">
+    <div class="bg-gradient-to-r from-[#0A4A2E] via-[#10305D] to-[#CB9D36] text-white py-16">
+      <div class="max-w-6xl mx-auto px-4 text-center">
+        <div class="inline-flex items-center gap-3 mb-6">
+          <FileText class="w-12 h-12" />
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Règlement Officiel</h1>
+        <p class="text-xl opacity-90 max-w-2xl mx-auto">
+          The 5 Cup - Compétition Universitaire de Football 2026
+        </p>
+        <p class="text-sm opacity-75 mt-4">
+          Dernière mise à jour : 14 janvier 2026
+        </p>
+      </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-4 py-8">
+      <div class="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-lg">
+        <div class="flex items-start gap-4">
+          <AlertCircle class="w-6 h-6 text-amber-600 flex-shrink-0 mt-1" />
+          <div>
+            <h3 class="font-bold text-amber-900 mb-2">Acceptation du règlement</h3>
+            <p class="text-amber-800 text-sm leading-relaxed">
+              L'inscription à la compétition implique l'acceptation <strong>sans réserve</strong> du présent règlement.
+              Tout manquement aux règles peut entraîner des sanctions allant de l'avertissement à l'exclusion définitive.
+              L'organisation se réserve le droit de modifier le règlement en cas de nécessité, avec notification préalable aux participants.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-4 pb-16">
+      <div class="space-y-8">
+        {rulesCategories.map((category, categoryIndex) => (
+          <div
+            class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+            style={`animation: fade-in 0.6s ease-out ${categoryIndex * 0.1}s both`}
+          >
+            <div
+              class="p-6 text-white flex items-center gap-4"
+              style={`background: linear-gradient(135deg, ${category.color} 0%, ${category.color}dd 100%)`}
+            >
+              <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                <category.icon class="w-7 h-7" />
+              </div>
+              <h2 class="text-2xl md:text-3xl font-bold">{category.title}</h2>
+            </div>
+
+            <div class="p-6 md:p-8">
+              <ul class="space-y-4">
+                {category.items.map((item) => (
+                  <li class="flex items-start gap-3 text-gray-700">
+                    <CheckCircle
+                      class="w-5 h-5 flex-shrink-0 mt-0.5"
+                      style={`color: ${category.color}`}
+                    />
+                    <span class="leading-relaxed text-lg">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-12 bg-gradient-to-r from-red-50 to-orange-50 border-2 border-red-200 rounded-2xl p-8">
+        <div class="flex items-start gap-4">
+          <XCircle class="w-8 h-8 text-red-600 flex-shrink-0" />
+          <div>
+            <h3 class="text-2xl font-bold text-red-900 mb-4">Points Importants</h3>
+            <ul class="space-y-3 text-red-800">
+              <li class="flex items-start gap-3">
+                <span class="font-bold mt-0.5">•</span>
+                <span>Toute <strong>violence physique</strong> entraîne une exclusion définitive et des poursuites.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="font-bold mt-0.5">•</span>
+                <span>Le <strong>dopage</strong> est strictement interdit. Des contrôles peuvent être effectués.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="font-bold mt-0.5">•</span>
+                <span>Les décisions de l'<strong>arbitre sont définitives</strong>. Aucune contestation ne sera acceptée après le match.</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="font-bold mt-0.5">•</span>
+                <span>L'organisation se réserve le droit de <strong>modifier le règlement</strong> pour des raisons de sécurité ou d'organisation.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center">
+        <div class="bg-white rounded-2xl shadow-lg p-8">
+          <h3 class="text-2xl font-bold text-[#242424] mb-4">Questions sur le règlement ?</h3>
+          <p class="text-gray-600 mb-6">
+            Pour toute question ou clarification concernant le règlement, contactez l'organisation.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="mailto:contact@the5cup.fr"
+              class="inline-block px-8 py-4 bg-gradient-to-r from-[#0A4A2E] to-[#10305D] text-white rounded-full font-semibold hover:scale-105 transition-transform duration-300 shadow-lg"
+            >
+              Nous contacter
+            </a>
+            <a
+              href="/competition"
+              class="inline-block px-8 py-4 bg-white border-2 border-[#CB9D36] text-[#CB9D36] rounded-full font-semibold hover:bg-[#CB9D36] hover:text-white transition-all duration-300 shadow-lg"
+            >
+              Voir la compétition
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-center text-gray-400 mt-8 text-sm">
+        Document officiel • The 5 Cup 2026 • Tous droits réservés
+      </p>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

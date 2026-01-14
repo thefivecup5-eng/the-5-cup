@@ -36,22 +36,18 @@ const styles = colorStyles[color];
 <div
   class="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col items-center p-6 pt-0 relative group"
 >
-  <!-- Top Border -->
   <div class={`absolute top-0 left-0 w-full h-1.5 ${styles.border}`}></div>
 
-  <!-- Icon -->
   <div
     class="mt-8 mb-4 p-3 rounded-full bg-gray-50 border border-gray-100 transform group-hover:scale-110 transition-transform duration-300"
   >
     <slot name="icon" />
   </div>
 
-  <!-- Content -->
   <h3 class="text-gray-900 font-semibold text-lg mb-1">{platform}</h3>
   <p class="text-gray-500 text-sm mb-6">{handle}</p>
 
   <div class="mt-auto w-full text-center">
-    <!-- Followers (optional based on designs) -->
     {
       followers && (
         <p class="text-gray-400 text-xs mb-3 font-medium tracking-wide">
