@@ -1,0 +1,143 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="À propos - The 5 Cup" description="À propos de The 5 Cup - Compétition universitaire de football">
+  <div class="min-h-screen bg-gradient-to-b from-[#FFFEF8] to-[#f5f5f0] py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <!-- Header -->
+      <div class="text-center mb-16 animate-fade-in">
+        <h1 class="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-[#0A4A2E] via-[#10305D] to-[#CB9D36] bg-clip-text text-transparent">
+          À propos de The 5 Cup
+        </h1>
+        <div class="w-24 h-1 bg-gradient-to-r from-[#0A4A2E] to-[#CB9D36] mx-auto"></div>
+      </div>
+
+      <!-- Content -->
+      <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 space-y-8 animate-fade-in" style="animation-delay: 200ms">
+
+        <!-- Section 1 -->
+        <section>
+          <h2 class="text-3xl font-bold text-[#242424] mb-4 flex items-center gap-3">
+            <span class="text-4xl">⚽</span>
+            Notre Mission
+          </h2>
+          <p class="text-lg text-gray-700 leading-relaxed">
+            The 5 Cup est une compétition universitaire de football unique qui réunit passion, compétition et esprit d'équipe.
+            Notre objectif est de créer un événement sportif mémorable où les étudiants peuvent démontrer leurs talents sur le terrain.
+          </p>
+        </section>
+
+        <!-- Section 2 -->
+        <section>
+          <h2 class="text-3xl font-bold text-[#242424] mb-4 flex items-center gap-3">
+            <span class="text-4xl">🏆</span>
+            Le Concept
+          </h2>
+          <p class="text-lg text-gray-700 leading-relaxed mb-4">
+            La compétition s'organise autour de trois poules élémentaires symbolisant les forces de la nature :
+          </p>
+          <div class="grid md:grid-cols-3 gap-4">
+            <div class="bg-gradient-to-br from-[#0A4A2E]/10 to-[#0A4A2E]/5 p-6 rounded-xl border-2 border-[#0A4A2E]/20">
+              <div class="text-3xl mb-2">🌍</div>
+              <h3 class="font-bold text-[#0A4A2E] mb-2">Terre</h3>
+              <p class="text-sm text-gray-600">Force, Résilience, Détermination</p>
+            </div>
+            <div class="bg-gradient-to-br from-[#CB9D36]/10 to-[#CB9D36]/5 p-6 rounded-xl border-2 border-[#CB9D36]/20">
+              <div class="text-3xl mb-2">💨</div>
+              <h3 class="font-bold text-[#CB9D36] mb-2">Air</h3>
+              <p class="text-sm text-gray-600">Vitesse, Agilité, Stratégie</p>
+            </div>
+            <div class="bg-gradient-to-br from-[#10305D]/10 to-[#10305D]/5 p-6 rounded-xl border-2 border-[#10305D]/20">
+              <div class="text-3xl mb-2">🌊</div>
+              <h3 class="font-bold text-[#10305D] mb-2">Eau</h3>
+              <p class="text-sm text-gray-600">Fluidité, Coordination, Adaptabilité</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 3 -->
+        <section>
+          <h2 class="text-3xl font-bold text-[#242424] mb-4 flex items-center gap-3">
+            <span class="text-4xl">📅</span>
+            Informations Pratiques
+          </h2>
+          <div class="bg-[#FFFEF8] rounded-xl p-6 space-y-3 border-2 border-[#CB9D36]/20">
+            <div class="flex items-start gap-3">
+              <span class="text-2xl">📍</span>
+              <div>
+                <p class="font-semibold text-[#242424]">Lieu</p>
+                <p class="text-gray-700">UrbanSoccer - Toulouse Sept Deniers</p>
+                <p class="text-sm text-gray-600">2 Rue de l'Égalité, 31200 Toulouse</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="text-2xl">📆</span>
+              <div>
+                <p class="font-semibold text-[#242424]">Date</p>
+                <p class="text-gray-700">25 avril 2026</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="text-2xl">👥</span>
+              <div>
+                <p class="font-semibold text-[#242424]">Participants</p>
+                <p class="text-gray-700">15 équipes • 90 joueurs • 3 poules</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="text-2xl">💰</span>
+              <div>
+                <p class="font-semibold text-[#242424]">Inscription</p>
+                <p class="text-gray-700">12€ par équipe</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="text-center pt-8">
+          <p class="text-lg text-gray-700 mb-6">Prêt à rejoindre l'aventure ?</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="/"
+              class="inline-block px-8 py-4 bg-gradient-to-r from-[#0A4A2E] to-[#10305D] text-[#FFFEF8] rounded-full font-semibold hover:scale-105 transition-transform duration-300 shadow-lg"
+            >
+              Retour à l'accueil
+            </a>
+            <a
+              href="/competition"
+              class="inline-block px-8 py-4 bg-gradient-to-r from-[#CB9D36] to-[#10305D] text-[#FFFEF8] rounded-full font-semibold hover:scale-105 transition-transform duration-300 shadow-lg"
+            >
+              Voir la compétition
+            </a>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Footer note -->
+      <p class="text-center text-gray-500 mt-8 text-sm">
+        🚀 Page de test pour le déploiement Vercel
+      </p>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out forwards;
+    opacity: 0;
+  }
+</style>
